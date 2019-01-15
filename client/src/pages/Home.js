@@ -6,7 +6,7 @@ import Book from "../components/Book";
 import API from "../utils/API";
 import { Col, Row, Container } from "../components/Grid";
 import { List } from "../components/List";
-
+import Nav from "../components/Nav";
 class Home extends Component {
   state = {
     books: [],
@@ -108,7 +108,6 @@ class Home extends Component {
             </Card>
           </Col>
         </Row>
-        <Footer />
       </Container>
     );
   }
