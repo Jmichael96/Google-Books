@@ -1,5 +1,9 @@
 .jumbotron {
     min-height: 300px;
     padding-top: 100px;
+    background-color: rgb(77, 70, 63);
+    color: white;
+    text-shadow: 0 4px 8px black;
+    box-shadow: 0 10px 20px black;
   }
   

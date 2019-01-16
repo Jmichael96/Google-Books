@@ -1,0 +1,13 @@
+#search-btn{
+    background-color: rgb(170, 170, 170);
+    color: white;
+    box-shadow: 0 2px 8px black;
+}
+#search-btn:hover{
+    background-color: rgb(87, 87, 87);;
+    box-shadow: 0 2px 8px rgb(77, 77, 77);
+    color: white;
+}
+.form-control{
+    box-shadow: 0 3px 10px black;
+}
