@@ -1,59 +1,58 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import "./style.css";
+import { MDBNavbar, MDBNavbarBrand, MDBNavbarToggler, MDBCollapse, MDBNavbarNav, MDBNavItem } from "mdbreact";
 
 class Nav extends Component {
+
   state = {
-    open: false,
-    width: window.innerWidth
+    isOpen: false,
   };
 
-  updateWidth = () => {
-    const newState = { width: window.innerWidth };
-
-    if (this.state.open && newState.width > 991) {
-      newState.open = false;
-    }
-
-    this.setState(newState);
+  toggleCollapse = () => {
+    this.setState({ isOpen: !this.state.isOpen });
   };
 
-  toggleNav = () => {
-    this.setState({ open: !this.state.open });
-  };
-
-  componentDidMount() {
-    window.addEventListener("resize", this.updateWidth);
-  }
-
-  componentWillUnMount() {
-    window.removeEventListener("resize", this.updateWidth);
-  }
 
   render() {
+
     return (
-      <nav className="navbar mb-2">
-               
-              <button ><Link
+      <MDBNavbar dark expand="md">
+        <MDBNavbarBrand>
+          <h1 id="googleBooks">Google Books</h1>
+        </MDBNavbarBrand>
+        <MDBNavbarToggler onClick={this.toggleCollapse} />
+        <MDBCollapse id="navbarCollapse3" isOpen={this.state.isOpen} navbar>
+          <MDBNavbarNav right>
+            <MDBNavItem>
+              <Link
                 onClick={this.toggleNav}
                 id="button"
                 className={window.location.pathname === "/" ? "nav-link active" : "nav-link "}
                 to="/"
               >
-                Search
+                <button>
+                  Home
+          </button>
               </Link>
-              </button>
-              <button>
+            </MDBNavItem>
+            <MDBNavItem>
               <Link
                 onClick={this.toggleNav}
                 id="button"
                 className={window.location.pathname === "/saved" ? "nav-link active" : "nav-link"}
                 to="/saved"
               >
-                Saved
+                <button>
+                  Saved
+                </button>
+
               </Link>
-              </button>
-      </nav>
+            </MDBNavItem>
+          </MDBNavbarNav>
+
+        </MDBCollapse>
+      </MDBNavbar>
     );
   }
 }

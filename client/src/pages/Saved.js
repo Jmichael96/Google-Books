@@ -1,10 +1,10 @@
 import React, { Component } from "react";
-import Jumbotron from "../components/Jumbotron";
 import Card from "../components/Card";
 import Book from "../components/Book";
 import API from "../utils/API";
-import { Col, Row, Container } from "../components/Grid";
 import { List } from "../components/List";
+import { MDBRow, MDBContainer, MDBCol } from "mdbreact";
+import './styles/saved.css';
 
 class Saved extends Component {
   state = {
@@ -31,19 +31,14 @@ class Saved extends Component {
 
   render() {
     return (
-      <Container>
-        <Row>
-          <Col size="md-12">
-            <Jumbotron>
-              <h1 className="text-center">
-                <strong>(React) Google Books Search</strong>
-              </h1>
-              <h2 className="text-center">Search for and Save Books of Interest.</h2>
-            </Jumbotron>
-          </Col>
-        </Row>
-        <Row>
-          <Col size="md-12">
+      <MDBContainer>
+        <MDBRow>
+          <MDBCol size="12" sm="12">
+              <h2 id="savedTitle" className="text-center">Your Saved Books</h2>
+          </MDBCol>
+        </MDBRow>
+        <MDBRow>
+          <MDBCol size="md-12">
             <Card title="Saved Books" icon="download">
               {this.state.books.length ? (
                 <List>
@@ -58,10 +53,11 @@ class Saved extends Component {
                       image={book.image}
                       Button={() => (
                         <button
+                        id="deleteBookBtn"
                           onClick={() => this.handleBookDelete(book._id)}
-                          className="btn btn-danger ml-2"
+                          className="btn ml-2"
                         >
-                          Delete
+                          Delete Book
                         </button>
                       )}
                     />
@@ -71,9 +67,9 @@ class Saved extends Component {
                 <h2 className="text-center">No Saved Books</h2>
               )}
             </Card>
-          </Col>
-        </Row>
-      </Container>
+          </MDBCol>
+        </MDBRow>
+      </MDBContainer>
     );
   }
 }

@@ -1,39 +1,41 @@
 import React from "react";
 import { ListItem } from "../List";
-import { Row, Col } from "../Grid";
+import { MDBRow, MDBCol } from 'mdbreact';
 import "./style.css";
 
 function Book({ title, subtitle, authors, link, description, image, Button }) {
   return (
+    <div id="bookWrap">
     <ListItem>
-      <Row className="flex-wrap-reverse">
-        <Col size="md-8">
-          <h3 className="font-italic">{title}</h3>
-          {subtitle && <h5 className="font-italic">{subtitle}</h5>}
-        </Col>
-        <Col size="md-4">
+      <MDBRow id="row" className="flex-wrap-reverse">
+        <MDBCol size="md-8">
+          <h3 id="bookTitle">{title}</h3>
+          {subtitle && <h5 id="bookSubtitle" className="font-italic">{subtitle}</h5>}
+        </MDBCol>
+        <MDBCol size="md-4">
           <div className="btn-container">
-            <a className="btn btn-light" target="_blank" rel="noopener noreferrer" href={link}>
-              View
+            <a className="btn" id="viewSiteBtn" target="_blank" rel="noopener noreferrer" href={link}>
+              View Site
             </a>
             <Button />
           </div>
-        </Col>
-      </Row>
-      <Row>
-        <Col size="md-6">
+        </MDBCol>
+      </MDBRow>
+      <MDBRow>
+        <MDBCol size="md-6">
           <p className="font-italic small">Written by {authors}</p>
-        </Col>
-      </Row>
-      <Row>
-        <Col size="12 sm-4 md-2">
-          <img className="img-thumbnail img-fluid w-100" src={image} alt={title} />
-        </Col>
-        <Col size="12 sm-8 md-10">
-          <p>{description}</p>
-        </Col>
-      </Row>
+        </MDBCol>
+      </MDBRow>
+      <MDBRow>
+        <MDBCol size="12" sm="2">
+          <img id="bookImage" src={image} alt={title} />
+        </MDBCol>
+        <MDBCol size="12" sm="10">
+          <p id="bookDesc">{description}</p>
+        </MDBCol>
+      </MDBRow>
     </ListItem>
+    </div>
   );
 }
 

@@ -1,11 +1,13 @@
 import React, { Component } from "react";
-import Jumbotron from "../components/Jumbotron";
-import Card from "../components/Card";
+// import Jumbotron from "../components/Jumbotron";
 import Form from "../components/Form";
 import Book from "../components/Book";
 import API from "../utils/API";
-import { Col, Row, Container } from "../components/Grid";
+import { MDBRow, MDBContainer, MDBCol, MDBJumbotron, MDBCard, MDBCardHeader, MDBCardBody, MDBIcon } from 'mdbreact';
 import { List } from "../components/List";
+import './styles/home.css';
+
+
 class Home extends Component {
   state = {
     books: [],
@@ -30,10 +32,11 @@ class Home extends Component {
       .catch(() =>
         this.setState({
           books: [],
-          message: "No New Books Found, Try a Different Query"
+          message: "No New Books Found, Try a Different Name"
         })
       );
   };
+
 
   handleFormSubmit = event => {
     event.preventDefault();
@@ -56,29 +59,15 @@ class Home extends Component {
 
   render() {
     return (
-      <Container>
-        <Row>
-          <Col size="md-12">
-            <Jumbotron>
-              <h1 className="text-center">
-                <strong>(React) Google Books</strong>
-              </h1>
-              <h2 className="text-center">Search for and Save Books of Interest.</h2>
-            </Jumbotron>
-          </Col>
-          <Col size="md-12">
-            <Card title="Book Search" icon="far fa-book">
-              <Form
-                handleInputChange={this.handleInputChange}
-                handleFormSubmit={this.handleFormSubmit}
-                q={this.state.q}
-              />
-            </Card>
-          </Col>
-        </Row>
-        <Row>
-          <Col size="md-12">
-            <Card title="Results">
+      <MDBContainer>
+        <Form
+          handleInputChange={this.handleInputChange}
+          handleFormSubmit={this.handleFormSubmit}
+          q={this.state.q}
+        />
+        <MDBRow>
+          <MDBCol size="md-12">
+            <MDBCard id="bookCard" title="Results">
               {this.state.books.length ? (
                 <List>
                   {this.state.books.map(book => (
@@ -92,8 +81,9 @@ class Home extends Component {
                       image={book.volumeInfo.imageLinks.thumbnail}
                       Button={() => (
                         <button
+                          id="saveBtn"
                           onClick={() => this.handleBookSave(book.id)}
-                          className="btn btn-primary ml-2"
+                          className="btn ml-2"
                         >
                           Save
                         </button>
@@ -102,12 +92,12 @@ class Home extends Component {
                   ))}
                 </List>
               ) : (
-                <h2 className="text-center">{this.state.message}</h2>
-              )}
-            </Card>
-          </Col>
-        </Row>
-      </Container>
+                  <h2 id="bookMessage" className="text-center">{this.state.message}</h2>
+                )}
+            </MDBCard>
+          </MDBCol>
+        </MDBRow>
+      </MDBContainer>
     );
   }
 }

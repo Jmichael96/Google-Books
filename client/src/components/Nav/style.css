@@ -1,11 +1,25 @@
 .navbar {
-  background-color: rgb(77, 70, 63);
+  background-color: rgb(34, 34, 34);
   box-shadow: 0 8px 18px black;
 }
 button{
-  margin: 10px;
-  background-color: rgb(170, 170, 170);
-    box-shadow: 0 2px 8px black;
-    border: 1px solid rgb(170, 170, 170);
-    border-radius: 2px;
+  background-color: rgb(27, 49, 77);
+  box-shadow: 0 2px 8px black;
+  color: white;
+  border: 1px solid rgb(27, 49, 77);
+  border-radius: 10px;
+  font-weight: 700;
+  padding: 10px 25px;
+  -webkit-transition: box-shadow .5s ease-out;
+  -moz-transition: box-shadow .5s ease-out;
+  -o-transition: box-shadow .5s ease-out;
+  transition: box-shadow .5s ease-out;
+}
+button:hover {
+  box-shadow: 0 3px 10px white, 0 3px 20px white; 
+}
+#googleBooks {
+  color: white;
+  font-size: 50px;
+  font-weight: 600;
 }
