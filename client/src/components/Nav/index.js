@@ -1,60 +1,61 @@
-import React, { Component } from "react";
-import { Link } from "react-router-dom";
-import "./style.css";
-import { MDBNavbar, MDBNavbarBrand, MDBNavbarToggler, MDBCollapse, MDBNavbarNav, MDBNavItem } from "mdbreact";
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import {
+  MDBNavbar,
+  MDBNavbarBrand,
+  MDBNavbarToggler,
+  MDBCollapse,
+  MDBNavbarNav,
+  MDBNavItem
+} from 'mdbreact';
 
-class Nav extends Component {
+import './style.css';
 
-  state = {
-    isOpen: false,
-  };
+const Navbar = () => {
+  
+  const [isOpen, setIsOpen] = useState(false);
 
-  toggleCollapse = () => {
-    this.setState({ isOpen: !this.state.isOpen });
-  };
-
-
-  render() {
-
-    return (
-      <MDBNavbar dark expand="md">
-        <MDBNavbarBrand>
-          <h1 id="googleBooks">Google Books</h1>
-        </MDBNavbarBrand>
-        <MDBNavbarToggler onClick={this.toggleCollapse} />
-        <MDBCollapse id="navbarCollapse3" isOpen={this.state.isOpen} navbar>
-          <MDBNavbarNav right>
-            <MDBNavItem>
-              <Link
-                onClick={this.toggleNav}
-                id="button"
-                className={window.location.pathname === "/" ? "nav-link active" : "nav-link "}
-                to="/"
-              >
-                <button>
-                  Home
-          </button>
-              </Link>
-            </MDBNavItem>
-            <MDBNavItem>
-              <Link
-                onClick={this.toggleNav}
-                id="button"
-                className={window.location.pathname === "/saved" ? "nav-link active" : "nav-link"}
-                to="/saved"
-              >
-                <button>
-                  Saved
-                </button>
-
-              </Link>
-            </MDBNavItem>
-          </MDBNavbarNav>
-
-        </MDBCollapse>
-      </MDBNavbar>
-    );
+  const toggleNav = () => {
+    setIsOpen(!isOpen);
   }
-}
 
-export default Nav;
+  return (
+    <MDBNavbar dark expand="md">
+      <MDBNavbarBrand>
+        <h1>GOOGLE BOOKS</h1>
+      </MDBNavbarBrand>
+      <MDBNavbarToggler onClick={toggleNav} />
+      <MDBCollapse id="navbarCollapse3" isOpen={isOpen} navbar>
+        <MDBNavbarNav right>
+          <MDBNavItem>
+            <Link
+              onClick={toggleNav}
+              id="button"
+              className={window.location.pathname === "/" ? "nav-link active" : "nav-link "}
+              to="/"
+            >
+              <button>
+                Home
+      </button>
+            </Link>
+          </MDBNavItem>
+          <MDBNavItem>
+            <Link
+              onClick={toggleNav}
+              id="button"
+              className={window.location.pathname === "/saved" ? "nav-link active" : "nav-link"}
+              to="/saved"
+            >
+              <button>
+                Saved
+            </button>
+
+            </Link>
+          </MDBNavItem>
+        </MDBNavbarNav>
+
+      </MDBCollapse>
+    </MDBNavbar>
+  )
+}
+export default Navbar;

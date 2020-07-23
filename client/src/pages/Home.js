@@ -1,18 +1,23 @@
 import React, { Component } from "react";
-// import Jumbotron from "../components/Jumbotron";
 import Form from "../components/Form";
 import Book from "../components/Book";
 import API from "../utils/API";
-import { MDBRow, MDBContainer, MDBCol, MDBJumbotron, MDBCard, MDBCardHeader, MDBCardBody, MDBIcon } from 'mdbreact';
-import { List } from "../components/List";
+import {
+  MDBRow,
+  MDBContainer,
+  MDBCol,
+  MDBCard,
+} from 'mdbreact';
+import { List } from '../components/List/index'
+
 import './styles/home.css';
 
 
 class Home extends Component {
   state = {
     books: [],
-    q: "",
-    message: "Search For A Book To Begin!"
+    query: "",
+    message: ""
   };
 
   handleInputChange = event => {
@@ -23,7 +28,7 @@ class Home extends Component {
   };
 
   getBooks = () => {
-    API.getBooks(this.state.q)
+    API.getBooks(this.state.query)
       .then(res =>
         this.setState({
           books: res.data
@@ -38,8 +43,13 @@ class Home extends Component {
   };
 
 
-  handleFormSubmit = event => {
-    event.preventDefault();
+  handleFormSubmit = (e) => {
+    e.preventDefault();
+    // check if there is query passed in to search
+    if (!this.state.query) {
+      return;
+    }
+    
     this.getBooks();
   };
 
@@ -63,7 +73,7 @@ class Home extends Component {
         <Form
           handleInputChange={this.handleInputChange}
           handleFormSubmit={this.handleFormSubmit}
-          q={this.state.q}
+          query={this.state.query}
         />
         <MDBRow>
           <MDBCol size="md-12">

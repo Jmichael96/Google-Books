@@ -4,8 +4,9 @@ import Home from "./pages/Home";
 import Saved from "./pages/Saved";
 import NoMatch from "./pages/NoMatch";
 import Nav from "./components/Nav";
-import "./App.css";
-function App() {
+import './App.css';
+
+const App = () => {
   return (
     <Router>
       <div>

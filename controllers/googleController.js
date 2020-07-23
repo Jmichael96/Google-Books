@@ -1,5 +1,5 @@
-const axios = require("axios");
-const db = require("../models");
+const axios = require('axios');
+const db = require('../models');
 
 // Defining methods for the googleController
 

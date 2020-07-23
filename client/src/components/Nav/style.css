@@ -2,7 +2,7 @@
   background-color: rgb(34, 34, 34);
   box-shadow: 0 8px 18px black;
 }
-button{
+/* button{
   background-color: rgb(27, 49, 77);
   box-shadow: 0 2px 8px black;
   color: white;
@@ -14,10 +14,10 @@ button{
   -moz-transition: box-shadow .5s ease-out;
   -o-transition: box-shadow .5s ease-out;
   transition: box-shadow .5s ease-out;
-}
-button:hover {
+} */
+/* button:hover {
   box-shadow: 0 3px 10px white, 0 3px 20px white; 
-}
+} */
 #googleBooks {
   color: white;
   font-size: 50px;
