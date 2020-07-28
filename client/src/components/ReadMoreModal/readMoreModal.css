@@ -1,0 +1,4 @@
+/* the section element that surrounds the readmoremodal component */
+#modalSection {
+    z-index: 99;
+}

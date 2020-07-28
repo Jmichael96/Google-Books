@@ -1,9 +1,13 @@
-import React, { Component } from "react";
-import Card from "../components/Card";
-import Book from "../components/Book";
-import API from "../utils/API";
-import { List } from "../components/List";
-import { MDBRow, MDBContainer, MDBCol } from "mdbreact";
+import React, { Component } from 'react';
+import Card from '../components/Card';
+import Book from '../components/Book/Book.jsx';
+import API from '../utils/API';
+import {
+  MDBRow,
+  MDBContainer,
+  MDBCol
+} from 'mdbreact';
+
 import './styles/saved.css';
 
 class Saved extends Component {
@@ -34,14 +38,14 @@ class Saved extends Component {
       <MDBContainer>
         <MDBRow>
           <MDBCol size="12" sm="12">
-              <h2 id="savedTitle" className="text-center">Your Saved Books</h2>
+            <h2 id="savedTitle" className="text-center">Your Saved Books</h2>
           </MDBCol>
         </MDBRow>
         <MDBRow>
           <MDBCol size="md-12">
             <Card title="Saved Books" icon="download">
               {this.state.books.length ? (
-                <List>
+                <div>
                   {this.state.books.map(book => (
                     <Book
                       key={book._id}
@@ -53,7 +57,7 @@ class Saved extends Component {
                       image={book.image}
                       Button={() => (
                         <button
-                        id="deleteBookBtn"
+                          id="deleteBookBtn"
                           onClick={() => this.handleBookDelete(book._id)}
                           className="btn ml-2"
                         >
@@ -62,10 +66,10 @@ class Saved extends Component {
                       )}
                     />
                   ))}
-                </List>
+                </div>
               ) : (
-                <h2 className="text-center">No Saved Books</h2>
-              )}
+                  <h2 className="text-center">No Saved Books</h2>
+                )}
             </Card>
           </MDBCol>
         </MDBRow>

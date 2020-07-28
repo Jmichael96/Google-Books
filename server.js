@@ -20,5 +20,5 @@ app.use(routes);
 connectDB();
 
 app.listen(PORT, () => {
-  console.log(`🌎 ==> API server now on port ${PORT}!`);
+  console.log(`🌎 server now on port ${PORT}!`);
 });

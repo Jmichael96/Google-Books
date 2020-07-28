@@ -1,0 +1,174 @@
+/* book card that contains all content of book */
+
+.bookCard {
+  background-color: white;
+  position: relative;
+  z-index: auto;
+  margin: .8rem;
+  width: 35rem;
+  padding: .5rem;
+  border-radius: 3px;
+  box-shadow: 0 2px 5px rgb(88, 88, 88);
+}
+
+/* book dropdown menu section wrap that holds the link and save button */
+
+.bookMenuWrap {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+/* dropdown menu */
+
+.dropdown {
+  box-shadow: none !important;
+  background-color: transparent
+}
+
+/* book title */
+
+.bookTitle {
+  text-align: center;
+  font-weight: 600;
+  font-size: 1.8rem;
+}
+
+/* book author */
+
+.writtenBy {
+  text-align: center;
+}
+
+/* section around the image */
+
+.bookImgWrap {
+  display: block;
+  justify-content: center;
+  align-content: center;
+  padding: 0 0 .5rem .5rem;
+}
+
+/* image for book */
+
+.bookImg {
+  display: block;
+  width: 10rem;
+  box-shadow: 0 2px 5px rgb(128, 128, 128);
+}
+
+/* book summary */
+
+.bookSummary {
+  padding: 0 .5rem 0 0;
+  cursor: pointer;
+}
+
+/* ! dropdown */
+
+.menuData {
+  display: none;
+  opacity: 0;
+  z-index: 2;
+}
+
+.menu-container {
+  text-align: center;
+}
+
+.dropdownContainer ul {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.dropdownContainer {
+  display: inline-block;
+  text-align: left;
+}
+
+.dropdownContainer a {
+  display: block;
+  padding: 0 16px;
+  line-height: inherit;
+  cursor: pointer;
+}
+
+/* icon menu button */
+
+.dropdownBtn>i {
+  color: black;
+}
+
+.outerMenu {
+  line-height: 45px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.menuListItem {
+  display: inline-block;
+  position: relative;
+  -webkit-transition: background-color .2s ease-in-out;
+  -moz-transition: background-color .2s ease-in-out;
+  -o-transition: background-color .2s ease-in-out;
+  transition: background-color .2s ease-in-out;
+}
+
+.menuData-open {
+  font-weight: 300;
+  text-transform: none;
+  display: block;
+  position: absolute;
+  width: 131px;
+  background-color: #343d41;
+  text-align: center;
+  left: -118px;
+  top: 21px;
+  animation: showme .3s ease-in-out;
+  z-index: 1;
+  box-shadow: 0 2px 5px rgb(128, 128, 128);
+}
+
+.menuData-open>li>a {
+  text-decoration: none;
+  color: white;
+}
+
+.menuData-open>li:hover {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+@keyframes showme {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* ! MEDIA QUERIES */
+
+@media only screen and (max-width: 768px) {
+  /* section around the image */
+  .bookImgWrap {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width: 575px) {
+  /* book summary */
+  .bookSummary {
+    margin-top: 1rem;
+    text-align: center;
+  }
+}
+
+@media only screen and (max-width: 360px) {
+  /* book title */
+  .bookTitle {
+    font-size: 1.5rem;
+  }
+}
