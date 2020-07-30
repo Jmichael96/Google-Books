@@ -20,7 +20,7 @@ const Navbar = () => {
   }
 
   return (
-    <MDBNavbar dark expand="md">
+    <MDBNavbar id="navbar" dark expand="md">
       <MDBNavbarBrand>
         <h1 id="navTitle">GOOGLE BOOKS</h1>
       </MDBNavbarBrand>
@@ -33,7 +33,7 @@ const Navbar = () => {
               className={window.location.pathname === "/" ? "nav-link active" : "nav-link "}
               to="/"
             >
-              <span href="#" className="navLink">
+              <span className="navLink">
                 HOME
               </span>
             </Link>
@@ -44,7 +44,7 @@ const Navbar = () => {
               className={window.location.pathname === "/saved" ? "nav-link active" : "nav-link"}
               to="/saved"
             >
-              <span href="#" className="navLink">
+              <span className="navLink">
                 SAVED
             </span>
 

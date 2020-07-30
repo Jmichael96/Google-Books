@@ -9,12 +9,14 @@ const connectDB = require('./services/db');
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
+connectDB();
+
 // Serve up static assets
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static('client/build'));
 }
 
-connectDB();
+
 
 // Add routes
 app.use(routes);

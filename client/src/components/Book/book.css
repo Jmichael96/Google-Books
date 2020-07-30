@@ -176,11 +176,15 @@
     margin-top: 1rem;
     text-align: center;
   }
+  .bookTitle {
+    padding: 0 .5rem 0 .5rem;
+    font-size: 1.3rem;
+  }
 }
 
 @media only screen and (max-width: 360px) {
   /* book title */
   .bookTitle {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
   }
 }
