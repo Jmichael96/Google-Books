@@ -23,4 +23,6 @@ Using Google-Books API to retrieve information upon a users search request.
 If the users search is relevant they will recieve a list of books with an image, summary, and a link that will direct them to that
 books URL. The user also has the option to save a book of their choosing which then stores it into the MongoDB and renders it on the 
 saved page for the user. 
+#### LIVE PREVIEW
+![GoogleBooksMedia](https://user-images.githubusercontent.com/40511023/88966950-bf8cc580-d272-11ea-9e5d-4504323dc971.gif)
 
