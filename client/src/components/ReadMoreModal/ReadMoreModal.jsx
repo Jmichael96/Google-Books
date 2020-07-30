@@ -8,6 +8,8 @@ import {
 } from 'mdbreact';
 import isEmpty from '../../utils/isEmpty';
 
+import './readMoreModal.css';
+
 const ReadMoreModal = ({ title, summary, isOpen, modalController }) => {
     const [modal, setModal] = useState(false);
 
@@ -27,7 +29,7 @@ const ReadMoreModal = ({ title, summary, isOpen, modalController }) => {
                     {!isEmpty(summary) && <p>{summary}</p>}
                 </MDBModalBody>
                 <MDBModalFooter>
-                    <button onClick={() => modalController()}>Close</button>
+                    <span id="closeModalBtn" onClick={() => modalController()}>CLOSE</span>
                 </MDBModalFooter>
             </MDBModal>
         </section>

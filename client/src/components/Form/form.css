@@ -31,13 +31,20 @@
 /* submit button */
 
 #searchBtn {
-    background-color: grey;
-    border: 1px solid grey;
+    background-color: rgb(34, 34, 34);
+    border: 1px solid rgb(34, 34, 34);
     border-top-right-radius: 3px;
     border-bottom-right-radius: 3px;
-    color: black
+    color: rgb(163, 163, 163);
+    -webkit-transition: color 0.2s ease-in-out;
+    -moz-transition: color 0.2s ease-in-out;
+    -o-transition: color 0.2s ease-in-out;
+    transition: color 0.2s ease-in-out;
 }
 
+#searchBtn:hover {
+    color: white;
+}
 /* icon inside the button */
 
 .bookIcon {

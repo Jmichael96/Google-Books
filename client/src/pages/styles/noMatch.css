@@ -1,0 +1,14 @@
+/* the 'no match' text p tag wrap */
+
+#noMatchTxt {
+    text-align: center;
+    font-size: 3rem;
+    font-weight: 500;
+    margin-top: 3rem;
+}
+
+/* emoji style */
+
+#emoji {
+    padding-left: .5rem;
+}

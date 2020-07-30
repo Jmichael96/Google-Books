@@ -1,4 +1,33 @@
 /* the section element that surrounds the readmoremodal component */
+
 #modalSection {
     z-index: 99;
+}
+
+#closeModalBtn {
+    color: rgb(0, 0, 0);
+    font-weight: 500;
+    font-size: 1rem;
+}
+
+#closeModalBtn:after {
+    display: block;
+    left: 0;
+    bottom: -10px;
+    width: 0;
+    height: 2px;
+    background-color: #56baed;
+    content: "";
+    -webkit-transition: width 0.2s ease-in-out;
+    -moz-transition: width 0.2s ease-in-out;
+    -o-transition: width 0.2s ease-in-out;
+    transition: width 0.2s ease-in-out;
+}
+
+#closeModalBtn:hover {
+    cursor: pointer;
+}
+
+#closeModalBtn:hover:after {
+    width: 100%;
 }

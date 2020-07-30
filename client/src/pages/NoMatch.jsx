@@ -10,9 +10,7 @@
 //           <Jumbotron>
 //             <h1 className="text-center">404 Page Not Found</h1>
 //             <h1 className="text-center">
-//               <span role="img" aria-label="Face With Rolling Eyes Emoji">
-//                 🙄
-//               </span>
+
 //             </h1>
 //           </Jumbotron>
 //         </Col>
@@ -22,3 +20,23 @@
 // }
 
 // export default NoMatch;
+
+import React, { Fragment } from 'react';
+
+import './styles/noMatch.css';
+
+const NoMatch = () => {
+
+    return (
+        <Fragment>
+            <p id="noMatchTxt">
+                NO MATCH
+                <span id="emoji" role="img" aria-label="Face With Rolling Eyes Emoji">
+                    🙄
+                </span>
+            </p>
+        </Fragment>
+    )
+
+}
+export default NoMatch;

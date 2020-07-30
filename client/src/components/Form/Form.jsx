@@ -1,15 +1,10 @@
 import React from 'react';
-import './style.css';
 import {
-  MDBRow,
-  MDBCol,
-  MDBCardHeader,
   MDBIcon,
-  MDBCard,
-  MDBContainer,
-  MDBCardBody
 } from 'mdbreact';
 import PropTypes from 'prop-types';
+
+import './form.css';
 
 const Form = ({ query, handleInputChange, handleFormSubmit }) => {
   return (

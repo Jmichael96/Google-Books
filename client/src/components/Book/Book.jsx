@@ -12,9 +12,8 @@ const Book = ({ title, authors, link, description, image, Button }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [openModal, setOpenModal] = useState(false);
 
-  const showDropdown = () => {
+  const toggleDropdown = () => {
     setIsOpen(!isOpen);
-    console.log('opening')
   }
 
 
@@ -33,12 +32,12 @@ const Book = ({ title, authors, link, description, image, Button }) => {
             <li
               className="menuListItem"
             >
-              <a className="dropdownBtn" onMouseDown={showDropdown}> <i className="fas fa-ellipsis-h"></i></a>
+              <span className="dropdownBtn" onMouseDown={toggleDropdown}> <i className="fas fa-ellipsis-h"></i></span>
               <ul className={`${isOpen ? 'menuData-open' : 'menuData'}`}>
-                <li>
+                <li onClick={toggleDropdown}>
                   <Button />
                 </li>
-                <li>
+                <li onClick={toggleDropdown}>
                   <a target="_blank" rel="noopener noreferrer" href={link}>LINK</a>
                 </li>
               </ul>

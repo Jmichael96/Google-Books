@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Form from '../components/Form';
+import Form from '../components/Form/Form.jsx';
 import Book from '../components/Book/Book.jsx';
 import API from '../utils/API';
 import isEmpty from '../utils/isEmpty';
@@ -15,8 +15,8 @@ class Home extends Component {
     message: ""
   };
 
-  handleInputChange = event => {
-    const { name, value } = event.target;
+  handleInputChange = (e) => {
+    const { name, value } = e.target;
     this.setState({
       [name]: value
     });
@@ -24,17 +24,18 @@ class Home extends Component {
 
   getBooks = () => {
     API.getBooks(this.state.query)
-      .then(res =>
+      .then((res) => {
         this.setState({
-          books: res.data
-        })
-      )
-      .catch(() =>
+          books: res.data,
+          message: ''
+        });
+      })
+      .catch(() => {
         this.setState({
-          books: [],
-          message: "No New Books Found, Try a Different Name"
-        })
-      );
+          message: 'Unable to search your request. Please try something else.'
+        });
+        return;
+      });
   };
 
 
@@ -42,6 +43,9 @@ class Home extends Component {
     e.preventDefault();
     // check if there is query passed in to search
     if (!this.state.query) {
+      this.setState({
+        message: 'Uh oh... make sure the search field is not empty.'
+      })
       return;
     }
 
@@ -76,13 +80,12 @@ class Home extends Component {
           description={book.volumeInfo.description}
           image={book.volumeInfo.imageLinks.thumbnail}
           Button={() => (
-            <a
-              id="saveBtn"
+            <span
               onClick={() => this.handleBookSave(book.id)}
               href="#"
             >
               SAVE
-            </a>
+            </span>
           )}
         />
       })
@@ -97,16 +100,11 @@ class Home extends Component {
           handleFormSubmit={this.handleFormSubmit}
           query={this.state.query}
         />
-        {/* <MDBRow>
-          <MDBCol size="md-12">
-              
-          </MDBCol>
-        </MDBRow> */}
         <Wrapper>
-          {this.state.books.length ? 
+          {isEmpty(this.state.message) ? 
           this.renderBooks()
             : (
-              <h2 id="bookMessage" className="text-center">{this.state.message}</h2>
+              <p id="errMsg">{this.state.message}</p>
             )}
         </Wrapper>
       </article>

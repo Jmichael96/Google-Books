@@ -1,8 +1,8 @@
-
 /* style for the response messages */
-#bookMessage {
-    color: white;
+
+#errMsg {
+    color: rgb(80, 80, 80);
     margin: 7px;
     font-weight: 600;
-    font-size: 40px;
+    font-size: 2rem;
 }

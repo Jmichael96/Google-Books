@@ -9,10 +9,10 @@ import {
   MDBNavItem
 } from 'mdbreact';
 
-import './style.css';
+import './nav.css';
 
 const Navbar = () => {
-  
+
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleNav = () => {
@@ -22,7 +22,7 @@ const Navbar = () => {
   return (
     <MDBNavbar dark expand="md">
       <MDBNavbarBrand>
-        <h1>GOOGLE BOOKS</h1>
+        <h1 id="navTitle">GOOGLE BOOKS</h1>
       </MDBNavbarBrand>
       <MDBNavbarToggler onClick={toggleNav} />
       <MDBCollapse id="navbarCollapse3" isOpen={isOpen} navbar>
@@ -30,25 +30,23 @@ const Navbar = () => {
           <MDBNavItem>
             <Link
               onClick={toggleNav}
-              id="button"
               className={window.location.pathname === "/" ? "nav-link active" : "nav-link "}
               to="/"
             >
-              <button>
-                Home
-      </button>
+              <span href="#" className="navLink">
+                HOME
+              </span>
             </Link>
           </MDBNavItem>
           <MDBNavItem>
             <Link
               onClick={toggleNav}
-              id="button"
               className={window.location.pathname === "/saved" ? "nav-link active" : "nav-link"}
               to="/saved"
             >
-              <button>
-                Saved
-            </button>
+              <span href="#" className="navLink">
+                SAVED
+            </span>
 
             </Link>
           </MDBNavItem>

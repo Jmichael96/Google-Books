@@ -15,8 +15,8 @@
 
 .bookMenuWrap {
   position: absolute;
-  top: 0;
-  right: 0;
+  top: -5px;
+  right: 13px;
 }
 
 /* dropdown menu */
@@ -95,10 +95,15 @@
   cursor: pointer;
 }
 
+.dropdownBtn {
+  cursor: pointer;
+}
+
 /* icon menu button */
 
-.dropdownBtn>i {
+.dropdownBtn>span>i {
   color: black;
+  cursor: pointer;
 }
 
 .outerMenu {
@@ -124,7 +129,7 @@
   width: 131px;
   background-color: #343d41;
   text-align: center;
-  left: -118px;
+  left: -132px;
   top: 21px;
   animation: showme .3s ease-in-out;
   z-index: 1;
@@ -134,6 +139,13 @@
 .menuData-open>li>a {
   text-decoration: none;
   color: white;
+}
+
+/* for the span prop element in the drop down menu */
+
+.menuData-open>li>span {
+  color: white;
+  cursor: pointer;
 }
 
 .menuData-open>li:hover {
