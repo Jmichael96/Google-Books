@@ -1,6 +1,12 @@
 # Google-Books 
 ## [Live Link](https://google-books96.herokuapp.com)
 
+#### DESKTOP/LAPTOP VIEW
+![Screenshot from 2020-07-30 14-28-12](https://user-images.githubusercontent.com/40511023/88966144-79833200-d271-11ea-9ef9-45e187f44a71.png)
+
+#### MOBILE VIEW
+![Screenshot from 2020-07-30 14-31-26](https://user-images.githubusercontent.com/40511023/88966141-78ea9b80-d271-11ea-96cc-b233b5afb936.png)
+
 ## TOOLS
 - React.Js
 - Javascript
@@ -11,7 +17,7 @@
 - CSS3
 - Axios
 - Bootstrap
-![demonstrationVid](https://user-images.githubusercontent.com/40511023/56626514-94470f80-6607-11e9-9d11-b89e5eb9e082.gif)
+
 
 Using Google-Books API to retrieve information upon a users search request. 
 If the users search is relevant they will recieve a list of books with an image, summary, and a link that will direct them to that
