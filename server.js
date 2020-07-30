@@ -14,10 +14,11 @@ if (process.env.NODE_ENV === 'production') {
   app.use(express.static('client/build'));
 }
 
+connectDB();
+
 // Add routes
 app.use(routes);
 
-connectDB();
 
 app.listen(PORT, () => {
   console.log(`🌎 server now on port ${PORT}!`);
